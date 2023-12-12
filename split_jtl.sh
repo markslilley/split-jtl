@@ -25,7 +25,7 @@ else
     echo "Spliting into individual report jtls and generating HTML reports"
     
     echo "### Generating Full Report  -->  report0.jtl  Generating HTML report0 ###"
-    awk -v columns=$columns -F "," ' { if ( NF-1 == columns ) print $0 } ' $filename > report0.jtl
+    awk -v columns=$columns -F "," ' { if ( NF-1 == columns ) print $0 } ' $filename | tee report0.jtl | sed '1d' | sort -k1 > temp0.jtl && filename=temp0.jtl
     (exec ${JMETER_HOME}/jmeter -g report0.jtl -o report0)
     
     for (( i=1 ; i<=$loops ; i++ ));
