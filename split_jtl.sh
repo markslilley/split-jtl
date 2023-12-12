@@ -19,8 +19,8 @@ else
     endDate=`cut -d, -f1 $filename | tail -n1 | cut -c1-10`
     durationSec=$(echo `echo $endDate - $startDate | bc`)
     testDuration=$(echo `echo $durationSec - $rampup - $rampdown | bc`)
-    loops=$(echo `scale=0;echo \($testDuration - $rampup\) / $hold | bc`)
-    
+    loops=$(echo `scale=0;echo $testDuration / $hold | bc`)
+
     echo "### startDate=$(date -d @$startDate) | endDate=$(date -d @$endDate) | duration=$durationSec | Report=$loops ###"
     echo "Spliting into individual report jtls and generating HTML reports"
     
