@@ -17,9 +17,9 @@ else
     columns=`echo $header | awk -F "," ' { print NF-1 } '`
     startDate=`sed '1d' $filename  | head -n1 | cut -c1-10`
     endDate=`cut -d, -f1 $filename | tail -n1 | cut -c1-10`
-    durationSec=$(echo `echo $endDate - $startDate | bc`)
-    testDuration=$(echo `echo $durationSec - $rampup - $rampdown | bc`)
-    loops=$(echo `scale=0;echo $testDuration / $hold | bc`)
+    durationSec=$(echo "$endDate - $startDate" | bc)
+    testDuration=$(echo "$durationSec - $rampup - $rampdown" | bc)
+    loops=$(echo "$testDuration / $hold" | bc)
 
     echo "### startDate=$(date -d @$startDate) | endDate=$(date -d @$endDate) | duration=$durationSec | Report=$loops ###"
     echo "Spliting into individual report jtls and generating HTML reports"
