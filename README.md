@@ -5,7 +5,7 @@ This shell script can take a jtl file and split it into new jtl files containing
 ### Script Execution
 The script expects input values from the command line. These are rampup, rampdown, hold and filename. If any of the values are not entered you will be prompted with a help dialogue.
 
-`./split-jtl.sh 600 0 600 dummy.jtl`
+`./split-jtl.sh 600 0 1800 dummy.jtl`
 
 ### Output
 The output of the script will be new jtl files and new Jmeter HTML reports. So typically you will see the following files and folders for a full 1 hour run split into 30 minutes seqments. Before execution the script will delete any previously created files listed below. 
