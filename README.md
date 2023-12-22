@@ -8,26 +8,20 @@ The script expects input values from the command line. These are rampup, rampdow
 `./split-jtl.sh 600 0 600 dummy.jtl`
 
 ### Output
-The output of the script will be new jtl files and new Jmeter HTML reports. So typically you will see the following files and folders for a full Peak+5 run. Before execution the script will delete any previously created files listed below. 
+The output of the script will be new jtl files and new Jmeter HTML reports. So typically you will see the following files and folders for a full 1 hour run split into 30 minutes seqments. Before execution the script will delete any previously created files listed below. 
 
 #### jtl files
 - report0.jtl - Filtered copy of full report. It will remove any incomplete lines and ensures that column numbers are correct removing any problem lines.
 - report1.jtl - Peak 1
 - report2.jtl - Peak 2
-- report3.jtl - Peak 3
-- report4.jtl - Peak 4
-- report5.jtl - Peak 5
 
 #### HTML Report folders
 - report0 - Filtered copy of full report. It will remove any incomplete lines and ensures that column numbers are correct removing any problem lines.
 - report1 - Peak 1
 - report2 - Peak 2
-- report3 - Peak 3
-- report4 - Peak 4
-- report5 - Peak 5
 
 #### Temp files
-- temp0.jtl - this is a temp file created to leave the kpi-out.jtl unaltered but provide a working copy which has been filtered.
+- temp0.jtl - this is a temp file created to leave the original jtl unaltered but provide a working copy which has been filtered.
 
 #### Example Execution Output
 
